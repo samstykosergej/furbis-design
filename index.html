@@ -3,56 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Furbis Design — Мягкая мебель на заказ</title>
+    <title>Furbis Design — Мягкая мебель на заказ в Смоленске</title>
+    <meta name="description" content="Изготовление премиальных диванов, кроватей и мягкой мебели по индивидуальным размерам. Собственное производство в Смоленске.">
+    <link rel="apple-touch-icon" href="logo.png">
+    <link rel="icon" type="image/png" href="logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --bg: #0d0f12; --surface: #161a1f; --surface2: #1e232a;
-            --accent: #3b82f6; --text: #e2e8f0; --muted: #94a3b8; --border: rgba(255,255,255,0.08);
+            --bg: #0d0f12;
+            --surface: #161a1f;
+            --surface2: #1e232a;
+            --accent: #3b82f6;
+            --text: #e2e8f0;
+            --muted: #94a3b8;
+            --border: rgba(255,255,255,0.08);
         }
+
         * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
-        body { background: var(--bg); color: var(--text); font-family: 'Golos Text', sans-serif; overflow-x: hidden; }
-        h1, h2, h3, .unbounded { font-family: 'Unbounded'; text-transform: uppercase; }
+        body { background: var(--bg); color: var(--text); font-family: 'Golos Text', sans-serif; line-height: 1.6; }
+        h1, h2, h3, .unbounded { font-family: 'Unbounded', sans-serif; text-transform: uppercase; }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        
-        /* Header */
-        header { position: fixed; top: 0; left: 0; right: 0; background: rgba(13,15,18,0.8); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid var(--border); }
-        .header-inner { display: flex; justify-content: space-between; align-items: center; height: 80px; }
-        .logo { font-weight: 700; font-size: 20px; text-decoration: none; color: #fff; font-family: 'Unbounded'; }
-        .nav-links a { margin-left: 25px; text-decoration: none; color: var(--muted); font-size: 13px; transition: 0.3s; }
-        .nav-links a:hover { color: var(--accent); }
 
-        .btn-sm { padding: 10px 18px; border-radius: 10px; font-size: 11px; font-weight: 700; text-decoration: none; font-family: 'Unbounded'; }
-        .btn-tg { background: #229ED9; color: #fff; margin-left: 20px; }
-        .btn-max { background: #fff; color: #000; margin-left: 10px; }
+        /* Sticky Header */
+        header {
+            position: fixed; top: 0; left: 0; right: 0;
+            background: rgba(13, 15, 18, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+        .logo { font-family: 'Unbounded'; font-weight: 700; font-size: 20px; text-decoration: none; color: #fff; }
+        .nav { display: flex; align-items: center; }
+        .nav a { margin-left: 25px; text-decoration: none; color: var(--muted); font-size: 13px; font-weight: 500; transition: 0.3s; }
+        .nav a:hover { color: var(--accent); }
 
         /* Hero */
-        .hero { padding: 200px 0 100px; text-align: center; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
-        .hero h1 { font-size: clamp(32px, 8vw, 64px); line-height: 1.1; margin-bottom: 24px; }
+        .hero { padding: 180px 0 100px; text-align: center; }
+        .hero-label { color: var(--accent); font-weight: 700; margin-bottom: 20px; letter-spacing: 0.1em; font-size: 12px; }
+        .hero h1 { font-size: clamp(32px, 8vw, 60px); line-height: 1.1; margin-bottom: 24px; }
         .hero p { max-width: 650px; margin: 0 auto 40px; color: var(--muted); font-size: 18px; }
-        .hero-btns { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
 
-        .btn-lg { padding: 20px 36px; border-radius: 14px; text-decoration: none; font-weight: 700; font-family: 'Unbounded'; font-size: 14px; transition: 0.3s; text-align: center; min-width: 180px; }
-        .btn-blue { background: var(--accent); color: #fff; }
-        .btn-white { background: #fff; color: #000; }
+        .btn {
+            display: inline-block; padding: 18px 32px; background: var(--accent); color: #fff;
+            text-decoration: none; border-radius: 12px; font-weight: 700; font-family: 'Unbounded';
+            font-size: 13px; transition: 0.3s; border: none; cursor: pointer;
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3); }
+        .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text); }
 
-        /* Sections */
-        section { padding: 100px 0; border-top: 1px solid var(--border); }
-        .section-title { margin-bottom: 60px; text-align: center; }
-        .section-title h2 { font-size: 32px; margin-bottom: 10px; }
+        /* Section Commons */
+        .section { padding: 100px 0; }
+        .section-title { margin-bottom: 60px; }
+        .section-title h2 { font-size: 28px; margin-bottom: 12px; }
+        .section-title p { color: var(--muted); font-size: 16px; }
 
-        /* Portfolio */
-        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
-        .card { background: var(--surface); border-radius: 24px; overflow: hidden; border: 1px solid var(--border); transition: 0.3s; }
-        .card:hover { border-color: var(--accent); transform: translateY(-5px); }
-        .card-img { width: 100%; height: 400px; background: #252c35; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 12px; }
-        .card-body { padding: 25px; }
+        /* Portfolio Grid */
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; }
+        .project-card { background: var(--surface); border-radius: 24px; overflow: hidden; border: 1px solid var(--border); transition: 0.3s; }
+        .project-card:hover { border-color: var(--accent); }
+        .project-img { width: 100%; height: 400px; background: #1e232a; object-fit: cover; display: block; }
+        .project-info { padding: 25px; }
 
-        /* CTA */
-        .cta-box { background: linear-gradient(135deg, #161a1f 0%, #0d0f12 100%); border: 1px solid var(--accent); padding: 80px 40px; border-radius: 36px; text-align: center; }
+        /* Collaboration */
+        .collaboration { background: var(--surface); border-radius: 32px; padding: 60px; display: flex; align-items: center; gap: 40px; margin: 40px 0; border: 1px solid var(--border); }
+        .collab-text { flex: 1; }
+        .collab-badge { flex: 0 0 200px; height: 200px; background: var(--surface2); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid var(--accent); color: var(--accent); font-weight: 700; text-align: center; font-size: 12px; padding: 20px; }
 
-        @media (max-width: 768px) { .nav-links { display: none; } .hero h1 { font-size: 36px; } .hero-btns { flex-direction: column; align-items: center; } .btn-lg { width: 100%; max-width: 300px; } }
+        /* CTA Box */
+        .cta-box { background: linear-gradient(135deg, #161a1f 0%, #0d0f12 100%); border: 1px solid var(--accent); padding: 80px 40px; border-radius: 32px; text-align: center; }
+
+        /* Reviews */
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .review-card { padding: 30px; background: var(--surface); border-radius: 20px; border: 1px solid var(--border); font-style: italic; }
+        .review-author { margin-top: 20px; font-style: normal; font-weight: 700; color: var(--accent); font-size: 14px; }
+
+        footer { padding: 60px 0; text-align: center; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; }
+
+        @media (max-width: 768px) {
+            .nav { display: none; }
+            .collaboration { flex-direction: column; padding: 30px; text-align: center; }
+            .collab-badge { flex: 0 0 150px; height: 150px; }
+        }
     </style>
 </head>
 <body>
@@ -60,74 +94,90 @@
 <header>
     <div class="container header-inner">
         <a href="#" class="logo">FURBIS <span style="color: var(--accent);">DESIGN</span></a>
-        <nav style="display: flex; align-items: center;">
-            <div class="nav-links">
-                <a href="#projects">Проекты</a>
-                <a href="#designers">Дизайнерам</a>
-            </div>
-            <a href="https://t.me/+79156418341" class="btn-sm btn-tg">TELEGRAM</a>
-            <a href="https://max.ru/79156418341" class="btn-sm btn-max">MAX</a>
+        <nav class="nav">
+            <a href="#portfolio">Работы</a>
+            <a href="#designers">Дизайнерам</a>
+            <a href="#process">Этапы</a>
+            <a href="https://t.me/+79156418341" class="btn" style="padding: 10px 24px; margin-left: 20px;">MAX</a>
         </nav>
     </div>
 </header>
 
-<div class="hero container">
-    <div style="color: var(--accent); font-weight: 700; margin-bottom: 20px; font-size: 12px;" class="unbounded">СМОЛЕНСК • СОБСТВЕННОЕ ПРОИЗВОДСТВО</div>
-    <h1>МЕБЕЛЬ, СОЗДАННАЯ <br> ДЛЯ ЖИЗНИ</h1>
-    <p>Создаем эксклюзивные диваны и кровати по индивидуальным размерам. Сочетание премиальных материалов и ручного труда.</p>
+<section class="hero container">
+    <div class="hero-label unbounded">Смоленск • Собственное производство</div>
+    <h1>Мебель, созданная <br> для жизни</h1>
+    <p>Создаем премиальные диваны, кровати и кресла по индивидуальным проектам. Внимание к каждому шву и надежность в каждой детали.</p>
     <div class="hero-btns">
-        <a href="https://t.me/+79156418341" class="btn-lg btn-blue">Telegram</a>
-        <a href="https://max.ru/79156418341" class="btn-lg btn-white">MAX</a>
+        <a href="#portfolio" class="btn">Смотреть проекты</a>
+        <a href="https://t.me/+79156418341" class="btn btn-outline" style="margin-left: 10px;">Обсудить с MAX</a>
     </div>
-</div>
+</section>
 
-<section id="projects" class="container">
+<section id="portfolio" class="section container">
     <div class="section-title">
-        <h2>Реализованные проекты</h2>
-        <p style="color: var(--muted);">Вдохновение в деталях и качестве исполнения</p>
+        <h2 class="unbounded">Реализованные проекты</h2>
+        <p>Мебель, которая идеально вписалась в интерьеры наших клиентов</p>
     </div>
     <div class="portfolio-grid">
-        <div class="card">
-            <div class="card-img">ФОТО ДИВАНА</div>
-            <div class="card-body">
-                <h3 style="font-size: 18px; margin-bottom: 8px;">Премиальный диван</h3>
-                <p style="color: var(--muted); font-size: 14px;">Индивидуальный проект. Ткань: велюр высшей категории.</p>
+        <div class="project-card">
+            <div class="project-img"></div>
+            <div class="project-info">
+                <h3 class="unbounded" style="font-size: 16px; margin-bottom: 8px;">Диван по индивидуальному проекту</h3>
+                <p style="color: var(--muted); font-size: 14px;">Премиальный велюр, каркас из березовой фанеры.</p>
             </div>
         </div>
-        <div class="card">
-            <div class="card-img">ФОТО КРОВАТИ</div>
-            <div class="card-body">
-                <h3 style="font-size: 18px; margin-bottom: 8px;">Кровать Premium</h3>
-                <p style="color: var(--muted); font-size: 14px;">Разработка под дизайн-проект заказчика.</p>
+        <div class="project-card">
+            <div class="project-img"></div>
+            <div class="project-info">
+                <h3 class="unbounded" style="font-size: 16px; margin-bottom: 8px;">Интерьерная кровать</h3>
+                <p style="color: var(--muted); font-size: 14px;">Мягкое изголовье, ортопедическое основание.</p>
             </div>
         </div>
     </div>
 </section>
 
-<section id="designers" class="container">
+<section id="designers" class="section container">
+    <div class="collaboration">
+        <div class="collab-text">
+            <h2 class="unbounded" style="margin-bottom: 20px;">Дизайнерам интерьера</h2>
+            <p style="color: var(--muted); margin-bottom: 30px;">Мы умеем работать с чертежами и визуализациями любой сложности. Соблюдаем сроки, предоставляем образцы материалов и берем на себя все технические вопросы производства.</p>
+            <a href="https://t.me/+79156418341" class="btn">Написать MAX</a>
+        </div>
+        <div class="collab-badge unbounded">
+            ПАРТНЕРСТВО 2026
+        </div>
+    </div>
+</section>
+
+<section class="section container">
     <div class="cta-box">
-        <h2 style="margin-bottom: 20px;">Дизайнерам интерьера</h2>
-        <p style="color: var(--muted); margin-bottom: 40px; max-width: 700px; margin: 0 auto;">Работаем по вашим чертежам и визуализациям. Гарантируем точное попадание в размеры и соблюдение сроков.</p>
-        <div class="hero-btns">
-            <a href="https://t.me/+79156418341" class="btn-lg btn-blue">Telegram</a>
-            <a href="https://max.ru/79156418341" class="btn-lg btn-white">MAX</a>
+        <h2 class="unbounded" style="margin-bottom: 20px;">Узнать стоимость проекта</h2>
+        <p style="color: var(--muted); margin-bottom: 40px; max-width: 600px; margin: 0 auto 40px;">Пришлите нам фото, эскиз или дизайн-проект — MAX сделает предварительный расчет стоимости и сориентирует по срокам в течение 2 часов.</p>
+        <a href="https://t.me/+79156418341" class="btn">Связаться в мессенджере MAX</a>
+    </div>
+</section>
+
+<section class="section container">
+    <div class="section-title">
+        <h2 class="unbounded">Отзывы</h2>
+    </div>
+    <div class="reviews-grid">
+        <div class="review-card">
+            "Искали диван нестандартного размера. В Furbis сделали именно то, что было на картинке в голове. Качество идеальное."
+            <div class="review-author">— Светлана, г. Смоленск</div>
+        </div>
+        <div class="review-card">
+            "Рекомендую MAX как ответственного партнера. Реализовали вместе уже 3 проекта для моих заказчиков, всё в срок."
+            <div class="review-author">— Игорь, дизайнер интерьеров</div>
         </div>
     </div>
 </section>
 
-<section class="container" style="border-top: none;">
-    <div style="text-align: center;">
-        <h2 style="margin-bottom: 20px;">Узнать стоимость</h2>
-        <p style="color: var(--muted); margin-bottom: 40px;">Пришлите фото или эскиз — сделаем расчет за 2 часа.</p>
-        <div class="hero-btns">
-            <a href="https://t.me/+79156418341" class="btn-lg btn-blue">Telegram</a>
-            <a href="https://max.ru/79156418341" class="btn-lg btn-white">MAX</a>
-        </div>
+<footer>
+    <div class="container">
+        <p>© 2026 Furbis Design — Производство мягкой мебели премиум-класса.</p>
+        <p style="margin-top: 10px; opacity: 0.5;">Смоленск, Россия</p>
     </div>
-</section>
-
-<footer style="padding: 60px 0; text-align: center; border-top: 1px solid var(--border); color: var(--muted); font-size: 14px;">
-    <p>© 2026 Furbis Design. Производство мягкой мебели в Смоленске.</p>
 </footer>
 
 </body>
