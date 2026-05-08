@@ -70,7 +70,7 @@
         .hero::before {
             content: '';
             position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(13, 15, 18, 0.65);
+            background: rgba(13, 15, 18, 0.7);
             z-index: 1;
         }
 
@@ -100,8 +100,17 @@
         .card-img { width: 100%; height: 400px; object-fit: cover; display: block; background: #1e232a; }
         .card-info { padding: 25px; }
 
+        /* DESIGNERS BLOCK */
+        .designers-box { background: var(--surface); border-radius: 32px; padding: 60px; border: 1px solid var(--border); display: flex; align-items: center; gap: 40px; }
+        .designers-content { flex: 1; }
+
         /* CTA BOX */
         .cta-box { background: var(--surface); border: 1px solid var(--accent); padding: 70px 30px; border-radius: 32px; text-align: center; }
+
+        /* REVIEWS */
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+        .review-card { padding: 35px; background: var(--surface); border-radius: 24px; border: 1px solid var(--border); font-style: italic; }
+        .review-author { margin-top: 20px; font-style: normal; font-weight: 700; color: var(--accent); display: block; font-size: 14px; }
 
         /* FOOTER */
         footer { padding: 60px 0; text-align: center; color: var(--muted); font-size: 13px; border-top: 1px solid var(--border); }
@@ -111,6 +120,7 @@
             .hero-btns { flex-direction: column; align-items: center; }
             .btn-lg { width: 100%; max-width: 280px; }
             .header-inner { padding: 0 15px; }
+            .designers-box { flex-direction: column; text-align: center; padding: 40px 20px; }
         }
     </style>
 </head>
@@ -148,18 +158,34 @@
         </div>
         <div class="portfolio-grid">
             <div class="card">
-                <img src="hero-sofa.jpg" class="card-img" alt="Диван FURBIS">
+                <img src="hero-sofa.jpg" class="card-img" alt="Проект FURBIS">
                 <div class="card-info">
                     <h3 class="unbounded" style="font-size: 16px; margin-bottom: 8px;">Диван по проекту</h3>
                     <p style="color: var(--muted); font-size: 14px;">Премиальный велюр, индивидуальный размер.</p>
                 </div>
             </div>
             <div class="card">
-                <img src="hero-sofa.jpg" class="card-img" alt="Кровать FURBIS">
+                <img src="hero-sofa.jpg" class="card-img" alt="Проект FURBIS">
                 <div class="card-info">
                     <h3 class="unbounded" style="font-size: 16px; margin-bottom: 8px;">Кровать Premium</h3>
                     <p style="color: var(--muted); font-size: 14px;">Мягкое изголовье, ткань букле.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section container">
+        <div class="designers-box">
+            <div class="designers-content">
+                <h2 class="unbounded" style="margin-bottom: 20px;">Дизайнерам интерьера</h2>
+                <p style="color: var(--muted); margin-bottom: 30px;">Работаем по вашим чертежам и визуализациям любой сложности. Обеспечиваем техническую поддержку и соблюдение сроков.</p>
+                <div class="hero-btns" style="justify-content: flex-start;">
+                    <a href="https://t.me/+79156418341" class="btn-lg btn-blue" style="min-width: 140px;">Telegram</a>
+                    <a href="https://max.ru/79156418341" class="btn-lg btn-white" style="min-width: 140px;">MAX</a>
+                </div>
+            </div>
+            <div style="flex: 0 0 180px; height: 180px; border: 1px solid var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--accent); font-weight: 700; text-align: center; font-size: 12px;" class="unbounded">
+                B2B <br> PARTNER
             </div>
         </div>
     </section>
@@ -171,6 +197,22 @@
             <div class="hero-btns">
                 <a href="https://t.me/+79156418341" class="btn-lg btn-blue">Telegram</a>
                 <a href="https://max.ru/79156418341" class="btn-lg btn-white">MAX</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section container">
+        <div class="section-title">
+            <h2>Отзывы</h2>
+        </div>
+        <div class="reviews-grid">
+            <div class="review-card">
+                "Заказывали диван по фото. Качество исполнения и ткани на высоте. Всё в срок!"
+                <span class="review-author">— Анастасия, частный клиент</span>
+            </div>
+            <div class="review-card">
+                "Надежный партнер для реализации сложных мебельных позиций в моих дизайн-проектах."
+                <span class="review-author">— Игорь, дизайнер интерьеров</span>
             </div>
         </div>
     </section>
