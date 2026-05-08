@@ -1,788 +1,182 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<title>Furbis Design — Мягкая мебель на заказ</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-
-:root{
-  --bg:#f5f2ec;
-  --white:#ffffff;
-  --dark:#1f2940;
-  --gold:#c99746;
-  --text:#6a7180;
-  --shadow:0 20px 60px rgba(0,0,0,0.08);
-  --radius:28px;
-}
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  font-family:'Manrope',sans-serif;
-  background:var(--bg);
-  color:var(--dark);
-  overflow-x:hidden;
-}
-
-img{
-  width:100%;
-  display:block;
-}
-
-a{
-  text-decoration:none;
-  color:inherit;
-}
-
-.container{
-  width:min(1240px,92%);
-  margin:auto;
-}
-
-/* HEADER */
-
-header{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  z-index:1000;
-  backdrop-filter:blur(16px);
-  background:rgba(245,242,236,0.78);
-  border-bottom:1px solid rgba(0,0,0,0.04);
-}
-
-.header-inner{
-  height:96px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.logo{
-  display:flex;
-  align-items:center;
-  gap:18px;
-}
-
-.logo img{
-  width:62px;
-  height:62px;
-  object-fit:contain;
-}
-
-.logo-text h2{
-  font-size:26px;
-  letter-spacing:9px;
-  font-weight:700;
-  line-height:1;
-}
-
-.logo-text span{
-  font-size:11px;
-  letter-spacing:7px;
-  color:var(--text);
-}
-
-nav{
-  display:flex;
-  gap:40px;
-}
-
-nav a{
-  font-size:14px;
-  font-weight:600;
-  transition:0.3s;
-}
-
-nav a:hover{
-  color:var(--gold);
-}
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:17px 34px;
-  border-radius:100px;
-  background:var(--dark);
-  color:white;
-  font-weight:600;
-  transition:0.35s;
-}
-
-.btn:hover{
-  background:var(--gold);
-  transform:translateY(-3px);
-}
-
-/* HERO */
-
-.hero{
-  min-height:100vh;
-  background:
-  linear-gradient(
-    rgba(0,0,0,0.28),
-    rgba(0,0,0,0.28)
-  ),
-  url('hero-sofa.jpg') center/cover;
-
-  display:flex;
-  align-items:center;
-  position:relative;
-  color:white;
-}
-
-.hero::after{
-  content:'';
-  position:absolute;
-  left:0;
-  bottom:0;
-  width:100%;
-  height:220px;
-
-  background:linear-gradient(
-    transparent,
-    var(--bg)
-  );
-}
-
-.hero-content{
-  position:relative;
-  z-index:2;
-  max-width:760px;
-  padding-top:90px;
-}
-
-.hero-subtitle{
-  color:var(--gold);
-  letter-spacing:5px;
-  text-transform:uppercase;
-  font-size:13px;
-  margin-bottom:26px;
-}
-
-.hero h1{
-  font-size:96px;
-  line-height:0.92;
-  margin-bottom:28px;
-  font-weight:800;
-}
-
-.hero p{
-  font-size:22px;
-  max-width:620px;
-  line-height:1.8;
-  color:rgba(255,255,255,0.85);
-  margin-bottom:46px;
-}
-
-.hero-buttons{
-  display:flex;
-  gap:18px;
-  flex-wrap:wrap;
-}
-
-.btn-light{
-  background:white;
-  color:var(--dark);
-}
-
-.btn-light:hover{
-  background:var(--gold);
-  color:white;
-}
-
-/* SECTION */
-
-.section{
-  padding:140px 0;
-}
-
-.section-head{
-  margin-bottom:70px;
-}
-
-.section-head span{
-  color:var(--gold);
-  text-transform:uppercase;
-  letter-spacing:4px;
-  font-size:13px;
-}
-
-.section-head h2{
-  font-size:64px;
-  line-height:1;
-  margin-top:16px;
-  max-width:760px;
-}
-
-.section-head p{
-  margin-top:24px;
-  max-width:720px;
-  color:var(--text);
-  line-height:1.9;
-  font-size:18px;
-}
-
-/* ADVANTAGES */
-
-.advantages{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:28px;
-}
-
-.adv-card{
-  background:white;
-  border-radius:var(--radius);
-  padding:42px;
-  box-shadow:var(--shadow);
-  transition:0.35s;
-}
-
-.adv-card:hover{
-  transform:translateY(-10px);
-}
-
-.adv-number{
-  font-size:58px;
-  font-weight:800;
-  color:rgba(201,151,70,0.18);
-  margin-bottom:18px;
-}
-
-.adv-card h3{
-  font-size:28px;
-  margin-bottom:14px;
-}
-
-.adv-card p{
-  color:var(--text);
-  line-height:1.8;
-}
-
-/* PORTFOLIO */
-
-.portfolio-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:34px;
-}
-
-.project{
-  position:relative;
-  overflow:hidden;
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-}
-
-.project img{
-  height:620px;
-  object-fit:cover;
-  transition:0.6s;
-}
-
-.project:hover img{
-  transform:scale(1.05);
-}
-
-.project-info{
-  position:absolute;
-  left:0;
-  bottom:0;
-  width:100%;
-  padding:36px;
-  background:linear-gradient(
-    transparent,
-    rgba(0,0,0,0.75)
-  );
-
-  color:white;
-}
-
-.project-info h3{
-  font-size:34px;
-  margin-bottom:12px;
-}
-
-.project-info p{
-  color:rgba(255,255,255,0.82);
-  line-height:1.7;
-}
-
-/* PROCESS */
-
-.process{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:24px;
-}
-
-.step{
-  text-align:center;
-}
-
-.circle{
-  width:94px;
-  height:94px;
-  border-radius:50%;
-  background:white;
-  margin:auto;
-  margin-bottom:24px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:var(--gold);
-  font-size:28px;
-  font-weight:800;
-  box-shadow:var(--shadow);
-}
-
-.step h4{
-  font-size:22px;
-  margin-bottom:12px;
-}
-
-.step p{
-  color:var(--text);
-  line-height:1.8;
-  font-size:15px;
-}
-
-/* CTA */
-
-.cta{
-  padding-bottom:120px;
-}
-
-.cta-box{
-  background:var(--dark);
-  border-radius:42px;
-  padding:110px 70px;
-  text-align:center;
-  position:relative;
-  overflow:hidden;
-}
-
-.cta-box::before{
-  content:'';
-  position:absolute;
-  width:420px;
-  height:420px;
-  border-radius:50%;
-  background:rgba(255,255,255,0.04);
-  top:-220px;
-  right:-120px;
-}
-
-.cta-box h2{
-  position:relative;
-  z-index:2;
-  color:white;
-  font-size:70px;
-  line-height:1;
-  margin-bottom:24px;
-}
-
-.cta-box p{
-  position:relative;
-  z-index:2;
-  max-width:720px;
-  margin:auto;
-  margin-bottom:42px;
-  color:rgba(255,255,255,0.75);
-  line-height:1.9;
-  font-size:18px;
-}
-
-footer{
-  padding:50px 0 70px;
-  text-align:center;
-  color:var(--text);
-  font-size:14px;
-}
-
-/* MOBILE */
-
-@media(max-width:1100px){
-
-  .hero h1{
-    font-size:72px;
-  }
-
-  .advantages{
-    grid-template-columns:1fr;
-  }
-
-  .portfolio-grid{
-    grid-template-columns:1fr;
-  }
-
-  .process{
-    grid-template-columns:1fr 1fr;
-    gap:50px;
-  }
-}
-
-@media(max-width:760px){
-
-  nav{
-    display:none;
-  }
-
-  .hero h1{
-    font-size:50px;
-  }
-
-  .hero p{
-    font-size:18px;
-  }
-
-  .section-head h2{
-    font-size:42px;
-  }
-
-  .process{
-    grid-template-columns:1fr;
-  }
-
-  .cta-box{
-    padding:70px 28px;
-  }
-
-  .cta-box h2{
-    font-size:42px;
-  }
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furbis Design — Мягкая мебель премиум-класса на заказ</title>
+    <meta name="description" content="Изготовление эксклюзивной мягкой мебели в Смоленске. Диваны, кровати и кресла по индивидуальным проектам для частных интерьеров и дизайнеров.">
+    <link rel="apple-touch-icon" href="logo.png">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #0d0f12;
+            --surface: #161a1f;
+            --accent: #3b82f6;
+            --text: #e2e8f0;
+            --muted: #94a3b8;
+            --white: #ffffff;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+        body { background: var(--bg); color: var(--text); font-family: 'Golos Text', sans-serif; line-height: 1.6; }
+        h1, h2, h3, .unbounded { font-family: 'Unbounded', sans-serif; text-transform: uppercase; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* Sticky Header */
+        header {
+            position: fixed; top: 0; left: 0; right: 0;
+            background: rgba(13, 15, 18, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+        .logo { font-family: 'Unbounded'; font-weight: 700; font-size: 20px; text-decoration: none; color: #fff; }
+        .nav a { margin-left: 30px; text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 500; transition: 0.3s; }
+        .nav a:hover { color: var(--accent); }
+
+        /* Hero Section */
+        .hero { padding: 180px 0 100px; text-align: center; }
+        .hero h1 { font-size: clamp(32px, 8vw, 64px); line-height: 1.1; margin-bottom: 24px; }
+        .hero p { max-width: 600px; margin: 0 auto 40px; color: var(--muted); font-size: 18px; }
+
+        .btn {
+            display: inline-block; padding: 18px 36px; background: var(--accent); color: #fff;
+            text-decoration: none; border-radius: 12px; font-weight: 700; font-family: 'Unbounded';
+            font-size: 14px; transition: 0.3s;
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3); }
+        .btn-outline { background: transparent; border: 1px solid var(--border); margin-left: 15px; }
+
+        /* Portfolio (Interactive Grid) */
+        .section { padding: 100px 0; }
+        .section-title { margin-bottom: 50px; }
+        .section-title h2 { font-size: 32px; margin-bottom: 10px; }
+        .section-title p { color: var(--muted); }
+
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; }
+        .project-card {
+            background: var(--surface); border-radius: 20px; overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05); transition: 0.3s;
+        }
+        .project-card:hover { border-color: var(--accent); }
+        .project-img { width: 100%; height: 400px; background: #252c35; object-fit: cover; }
+        .project-info { padding: 25px; }
+
+        /* NEW: Designers Section */
+        .designers-block { background: var(--surface); padding: 60px; border-radius: 30px; display: flex; align-items: center; gap: 50px; }
+        
+        /* NEW: Calculator CTA */
+        .calc-block {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            padding: 80px 40px; border-radius: 30px; text-align: center; margin-top: 50px;
+        }
+
+        /* NEW: Reviews */
+        .reviews-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .review-card { padding: 30px; background: var(--surface); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); }
+
+        footer { padding: 60px 0; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; color: var(--muted); font-size: 14px; }
+
+        @media (max-width: 768px) {
+            .nav { display: none; }
+            .portfolio-grid, .reviews-grid { grid-template-columns: 1fr; }
+            .designers-block { flex-direction: column; text-align: center; padding: 30px; }
+        }
+    </style>
 </head>
-
 <body>
 
 <header>
-  <div class="container header-inner">
-
-    <div class="logo">
-
-      <img src="logo.png" alt="Furbis Design Logo">
-
-      <div class="logo-text">
-        <h2>FURBIS</h2>
-        <span>DESIGN</span>
-      </div>
-
+    <div class="container header-inner">
+        <a href="#" class="logo">FURBIS <span style="color: var(--accent);">DESIGN</span></a>
+        <nav class="nav">
+            <a href="#portfolio">Работы</a>
+            <a href="#designers">Дизайнерам</a>
+            <a href="#process">Процесс</a>
+            <a href="https://t.me/+79156418341" class="btn" style="padding: 10px 20px;">Telegram / Max</a>
+        </nav>
     </div>
-
-    <nav>
-      <a href="#portfolio">Портфолио</a>
-      <a href="#about">О нас</a>
-      <a href="#process">Этапы</a>
-      <a href="#contact">Контакты</a>
-    </nav>
-
-    <a href="#contact" class="btn">
-      Обсудить проект
-    </a>
-
-  </div>
 </header>
 
-<!-- HERO -->
-
-<section class="hero">
-
-  <div class="container">
-
-    <div class="hero-content">
-
-      <div class="hero-subtitle">
-        Производство мягкой мебели
-      </div>
-
-      <h1>
-        Мебель,<br>
-        созданная<br>
-        для жизни
-      </h1>
-
-      <p>
-        Изготавливаем диваны, кровати и мягкую мебель
-        по индивидуальным размерам и проектам.
-        Премиальные материалы, внимание к деталям
-        и современный дизайн.
-      </p>
-
-      <div class="hero-buttons">
-
-        <a href="#portfolio" class="btn btn-light">
-          Смотреть работы
-        </a>
-
-        <a href="#contact" class="btn">
-          Получить консультацию
-        </a>
-
-      </div>
-
+<section class="hero container">
+    <div style="color: var(--accent); font-weight: 700; margin-bottom: 20px;" class="unbounded">Смоленск — собственное производство</div>
+    <h1>Мебель, созданная <br> для жизни</h1>
+    <p>Изготавливаем премиальные диваны и кровати по вашим размерам с гарантией качества и вниманием к каждому шву.</p>
+    <div class="hero-btns">
+        <a href="#portfolio" class="btn">Смотреть проекты</a>
+        <a href="https://wa.me/79156418341" class="btn btn-outline" style="border: 1px solid rgba(255,255,255,0.2);">WhatsApp</a>
     </div>
-
-  </div>
-
 </section>
 
-<!-- ABOUT -->
-
-<section class="section" id="about">
-
-  <div class="container">
-
-    <div class="section-head">
-
-      <span>Furbis Design</span>
-
-      <h2>
-        Индивидуальная мебель
-        премиального уровня
-      </h2>
-
-      <p>
-        Мы создаем мягкую мебель на заказ —
-        под интерьер, размеры и задачи клиента.
-        Работаем с дизайнерами, частными проектами
-        и коммерческими пространствами.
-      </p>
-
+<section id="portfolio" class="section container">
+    <div class="section-title">
+        <h2>Реализованные проекты</h2>
+        <p>Каждое изделие уникально и создано под конкретный интерьер.</p>
     </div>
-
-    <div class="advantages">
-
-      <div class="adv-card">
-
-        <div class="adv-number">01</div>
-
-        <h3>
-          Индивидуальный подход
-        </h3>
-
-        <p>
-          Каждый проект разрабатывается
-          под конкретный интерьер и пожелания клиента.
-        </p>
-
-      </div>
-
-      <div class="adv-card">
-
-        <div class="adv-number">02</div>
-
-        <h3>
-          Премиальные материалы
-        </h3>
-
-        <p>
-          Используем качественные ткани,
-          фурнитуру и надежные конструкции.
-        </p>
-
-      </div>
-
-      <div class="adv-card">
-
-        <div class="adv-number">03</div>
-
-        <h3>
-          Собственное производство
-        </h3>
-
-        <p>
-          Контролируем весь процесс —
-          от проекта до установки мебели.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- PORTFOLIO -->
-
-<section class="section" id="portfolio">
-
-  <div class="container">
-
-    <div class="section-head">
-
-      <span>Портфолио</span>
-
-      <h2>
-        Реализованные проекты
-      </h2>
-
-      <p>
-        Вместо каталога — реальные проекты,
-        созданные под конкретные интерьеры.
-      </p>
-
-    </div>
-
     <div class="portfolio-grid">
-
-      <div class="project">
-
-        <img src="hero-sofa.jpg">
-
-        <div class="project-info">
-          <h3>Дизайнерский диван</h3>
-
-          <p>
-            Индивидуальный проект
-            для современного интерьера.
-          </p>
+        <div class="project-card">
+            <img src="hero-sofa.jpg" alt="Диван на заказ" class="project-img">
+            <div class="project-info">
+                <h3>Угловой диван "Cloud"</h3>
+                <p style="color: var(--muted); font-size: 14px;">Ткань: букле премиум. Срок: 25 дней.</p>
+            </div>
         </div>
-
-      </div>
-
-      <div class="project">
-
-        <img src="hero-sofa.jpg">
-
-        <div class="project-info">
-          <h3>Premium интерьер</h3>
-
-          <p>
-            Мягкая мебель
-            по индивидуальным размерам.
-          </p>
+        <div class="project-card">
+            <img src="hero-sofa.jpg" alt="Кровать на заказ" class="project-img">
+            <div class="project-info">
+                <h3>Кровать с мягким изголовьем</h3>
+                <p style="color: var(--muted); font-size: 14px;">Индивидуальный размер 200х220 см.</p>
+            </div>
         </div>
-
-      </div>
-
     </div>
-
-  </div>
-
 </section>
 
-<!-- PROCESS -->
-
-<section class="section" id="process">
-
-  <div class="container">
-
-    <div class="section-head">
-
-      <span>Этапы работы</span>
-
-      <h2>
-        Как мы создаем мебель
-      </h2>
-
+<section id="designers" class="section container">
+    <div class="designers-block">
+        <div style="flex: 1;">
+            <h2 style="margin-bottom: 20px;">Работаем с дизайнерами</h2>
+            <p style="color: var(--muted); margin-bottom: 30px;">Мы понимаем язык чертежей и визуализаций. Реализуем вашу идею в точности до миллиметра. Предоставляем образцы тканей и техническую поддержку на всех этапах.</p>
+            <a href="https://t.me/+79156418341" class="btn">Получить условия сотрудничества</a>
+        </div>
+        <div style="flex: 1; background: var(--accent); height: 300px; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-family: 'Unbounded'; font-weight: 700; color: #fff;">
+            B2B SOLUTION
+        </div>
     </div>
-
-    <div class="process">
-
-      <div class="step">
-        <div class="circle">1</div>
-        <h4>Консультация</h4>
-        <p>
-          Обсуждаем проект,
-          размеры и пожелания.
-        </p>
-      </div>
-
-      <div class="step">
-        <div class="circle">2</div>
-        <h4>Подбор материалов</h4>
-        <p>
-          Ткани, цвета,
-          текстуры и детали.
-        </p>
-      </div>
-
-      <div class="step">
-        <div class="circle">3</div>
-        <h4>Проектирование</h4>
-        <p>
-          Создаем проект
-          под ваш интерьер.
-        </p>
-      </div>
-
-      <div class="step">
-        <div class="circle">4</div>
-        <h4>Производство</h4>
-        <p>
-          Изготавливаем мебель
-          на собственном производстве.
-        </p>
-      </div>
-
-      <div class="step">
-        <div class="circle">5</div>
-        <h4>Доставка</h4>
-        <p>
-          Аккуратная установка
-          готовой мебели.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-
 </section>
 
-<!-- CTA -->
-
-<section class="cta" id="contact">
-
-  <div class="container">
-
-    <div class="cta-box">
-
-      <h2>
-        Создадим мебель,<br>
-        которая идеально впишется<br>
-        в ваш интерьер
-      </h2>
-
-      <p>
-        Отправьте фото интерьера, размеры
-        или дизайн-проект —
-        и мы предложим решение под ваш стиль.
-      </p>
-
-      <a href="#" class="btn btn-light">
-        Отправить проект
-      </a>
-
+<section class="section container">
+    <div class="calc-block">
+        <h2 style="margin-bottom: 20px;">Узнайте стоимость вашего проекта</h2>
+        <p style="color: var(--muted); margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">Пришлите нам фото понравившейся мебели или дизайн-проект — мы сделаем предварительный расчет стоимости в течение 2 часов.</p>
+        <a href="https://t.me/+79156418341" class="btn" style="background: #fff; color: #000;">Отправить проект в Telegram</a>
     </div>
+</section>
 
-  </div>
-
+<section class="section container">
+    <div class="section-title">
+        <h2>Что говорят клиенты</h2>
+    </div>
+    <div class="reviews-grid">
+        <div class="review-card">
+            <p>"Заказывали диван по фото из Pinterest. Получилось даже лучше оригинала. Качество швов и ткани на высоте!"</p>
+            <div style="margin-top: 20px; font-weight: 700; font-size: 14px;">— Елена, Смоленск</div>
+        </div>
+        <div class="review-card">
+            <p>"Работаем с Furbis уже по третьему объекту. Очень радует подход к деталям и соблюдение сроков. Рекомендую коллегам-дизайнерам."</p>
+            <div style="margin-top: 20px; font-weight: 700; font-size: 14px;">— Максим, студия интерьера</div>
+        </div>
+    </div>
 </section>
 
 <footer>
-  © 2025 Furbis Design — Мягкая мебель на заказ
+    <div class="container">
+        <p>© 2026 Furbis Design. Смоленск, собственное производство мягкой мебели.</p>
+        <p style="margin-top: 10px; font-size: 12px;">Создано с любовью для уютных домов.</p>
+    </div>
 </footer>
 
 </body>
