@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Furbis Design</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#f5f2ec;
+  --dark:#1f2940;
+  --gold:#c99746;
+  --text:#6a7180;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Manrope',sans-serif;
+  background:var(--bg);
+  color:var(--dark);
+}
+.container{
+  width:min(1200px,92%);
+  margin:auto;
+}
+header{
+  position:fixed;
+  width:100%;
+  top:0;
+  background:rgba(245,242,236,.85);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(0,0,0,.05);
+}
+.header-inner{
+  height:90px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.logo img{
+  width:60px;
+}
+.logo h2{
+  letter-spacing:8px;
+}
+nav{
+  display:flex;
+  gap:30px;
+}
+nav a{
+  text-decoration:none;
+  color:var(--dark);
+  font-weight:600;
+}
+.btn{
+  background:var(--dark);
+  color:#fff;
+  padding:16px 28px;
+  border-radius:50px;
+  text-decoration:none;
+}
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  color:white;
+  background:
+  linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),
+  url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1974&auto=format&fit=crop')
+  center/cover;
+}
+.hero-content{
+  max-width:720px;
+  padding-top:80px;
+}
+.hero span{
+  color:var(--gold);
+  letter-spacing:4px;
+  text-transform:uppercase;
+}
+.hero h1{
+  font-size:88px;
+  line-height:.95;
+  margin:24px 0;
+}
+.hero p{
+  font-size:22px;
+  line-height:1.8;
+  margin-bottom:40px;
+}
+.section{
+  padding:120px 0;
+}
+.section h2{
+  font-size:58px;
+  margin-bottom:20px;
+}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  margin-top:50px;
+}
+.card{
+  background:white;
+  padding:40px;
+  border-radius:24px;
+  box-shadow:0 15px 40px rgba(0,0,0,.06);
+}
+.portfolio{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:28px;
+  margin-top:50px;
+}
+.project{
+  position:relative;
+  overflow:hidden;
+  border-radius:28px;
+}
+.project img{
+  width:100%;
+  height:560px;
+  object-fit:cover;
+}
+.project-info{
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:100%;
+  padding:30px;
+  color:white;
+  background:linear-gradient(transparent,rgba(0,0,0,.75));
+}
+.cta{
+  background:var(--dark);
+  color:white;
+  padding:100px 40px;
+  border-radius:40px;
+  text-align:center;
+}
+.cta h2{
+  font-size:64px;
+  margin-bottom:24px;
+}
+footer{
+  padding:40px;
+  text-align:center;
+  color:var(--text);
+}
+@media(max-width:900px){
+  .hero h1{font-size:52px}
+  .cards,.portfolio{grid-template-columns:1fr}
+  nav{display:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container header-inner">
+
+<div class="logo">
+<img src="logo.png" alt="logo">
+<div>
+<h2>FURBIS</h2>
+<span>design</span>
+</div>
+</div>
+
+<nav>
+<a href="#">Портфолио</a>
+<a href="#">О нас</a>
+<a href="#">Контакты</a>
+</nav>
+
+<a class="btn" href="#">Обсудить проект</a>
+
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+<div class="hero-content">
+
+<span>Мягкая мебель на заказ</span>
+
+<h1>
+Мебель,<br>
+созданная<br>
+для вашего<br>
+интерьера
+</h1>
+
+<p>
+Изготавливаем диваны, кровати и мягкую мебель
+по индивидуальным размерам и проектам.
+</p>
+
+<a class="btn" href="#">Смотреть работы</a>
+
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+
+<h2>Почему выбирают нас</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Индивидуальный подход</h3>
+<br>
+<p>Каждый проект создается под конкретный интерьер.</p>
+</div>
+
+<div class="card">
+<h3>Премиальные материалы</h3>
+<br>
+<p>Ткани, фурнитура и качественные конструкции.</p>
+</div>
+
+<div class="card">
+<h3>Собственное производство</h3>
+<br>
+<p>Полный цикл изготовления мебели.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+
+<h2>Портфолио</h2>
+
+<div class="portfolio">
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=1974&auto=format&fit=crop">
+<div class="project-info">
+<h3>Современный диван</h3>
+<p>Индивидуальный проект для минималистичного интерьера.</p>
+</div>
+</div>
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1974&auto=format&fit=crop">
+<div class="project-info">
+<h3>Кровать Premium</h3>
+<p>Мебель по индивидуальным размерам.</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="cta">
+
+<h2>
+Создадим мебель,<br>
+которая идеально впишется<br>
+в ваш интерьер
+</h2>
+
+<p>
+Отправьте размеры или фото интерьера —
+и мы предложим решение под ваш проект.
+</p>
+
+</div>
+</div>
+</section>
+
+<footer>
+© 2025 Furbis Design
+</footer>
+
+</body>
+</html>
