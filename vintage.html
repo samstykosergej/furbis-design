@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Квартирный вопрос — Игра в винтаж</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+    --bg: #0d0f12;
+    --surface: #161a1f;
+    --accent: #3b82f6;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --border: rgba(255,255,255,0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Golos Text', sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+h1, h2 {
+    font-family: 'Unbounded', sans-serif;
+    text-transform: uppercase;
+}
+
+.hero-image {
+    width: 100%;
+    border-radius: 30px;
+    margin-bottom: 40px;
+}
+
+.project-title {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.project-description {
+    max-width: 800px;
+    color: var(--muted);
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.project-link {
+    display: inline-block;
+    margin-bottom: 60px;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 24px;
+    display: block;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 60px;
+    color: var(--muted);
+    text-decoration: none;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <img src="projects/vintage-1.jpg" class="hero-image">
+
+    <h1 class="project-title">
+        Квартирный вопрос — «Игра в винтаж»
+    </h1>
+
+    <p class="project-description">
+        Мягкая мебель для телевизионного интерьерного проекта
+        с индивидуальной геометрией и сложной пластикой формы.
+        Диваны были разработаны как полноценные интерьерные объекты,
+        объединяющие пространство и поддерживающие атмосферу проекта.
+    </p>
+
+    <a 
+       href="https://www.peredelka.tv/episodes/do/igra-v-vintazh/" 
+       target="_blank"
+       class="project-link"
+    >
+       Смотреть выпуск →
+    </a>
+
+    <div class="gallery">
+
+        <img src="projects/vintage-1.jpg">
+
+        <img src="projects/vintage-2.jpg">
+
+        <img src="projects/vintage-3.jpg">
+
+    </div>
+
+    <a href="index.html" class="back-link">
+        ← Вернуться на главную
+    </a>
+
+</div>
+
+</body>
+</html>
